@@ -15,12 +15,12 @@ jobs:
     - name: Cypress Execution
       uses: cypress-io/github-action@v6
       env:
-        CYPRESS_MAILSLURP_API_KEY: $CYPRESS_MAILSLURP_API_KEY
+        CYPRESS_MAILSLURP_API_KEY: ${{env.CYPRESS_MAILSLURP_API_KEY}}
     # - name: 'BrowserStack Env Setup'
     #   uses: 'browserstack/github-actions/setup-env@master'
     #   with:
     #     username:  ${{ secrets.BROWSERSTACK_USERNAME }}
     #     access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
 
-    # - run: npm i    
-    # - run: npx browserstack-cypress run    
+    - run: npm i    
+    - run: npx browserstack-cypress run    
