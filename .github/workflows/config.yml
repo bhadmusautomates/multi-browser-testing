@@ -14,4 +14,4 @@ jobs:
       uses: cypress-io/github-action@v6
       env:
         CYPRESS_MAILSLURP_API_KEY: ${{secrets.CYPRESS_MAILSLURP_API_KEY}}
-    - run: browserstack-cypress run    
+    - run: npx browserstack-cypress run    
