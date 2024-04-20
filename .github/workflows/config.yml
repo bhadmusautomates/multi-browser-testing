@@ -1,10 +1,14 @@
 name: Run Cypress
 
 on: [push]
+env:
+  CYPRESS_MAILSLURP_API_KEY: ${{secrets.CYPRESS_MAILSLURP_API_KEY}}
 
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    env:
+      CYPRESS_MAILSLURP_API_KEY: ${{secrets.CYPRESS_MAILSLURP_API_KEY}}
     
     steps:
     - name: Checkout
@@ -14,4 +18,4 @@ jobs:
       uses: cypress-io/github-action@v6
       env:
         CYPRESS_MAILSLURP_API_KEY: ${{secrets.CYPRESS_MAILSLURP_API_KEY}}
-    - run: npx browserstack-cypress run    
+    - run: npxbrowserstack-cypress run    

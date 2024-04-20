@@ -20,7 +20,10 @@ module.exports = defineConfig({
     chromeWebSecurity: false,
     watchForFileChanges: false,
     experimentalRunAllSpecs: true,
-    specPattern:'**/*.feature',
+    specPattern: '**/*.feature',
+    // env: {
+    //   "MAILSLURP_API_KEY": "2fc2e35c789884f31b43bf8db3ce62ee4772947d802bdec20530b04e54fb21f4"
+    // },
     setupNodeEvents,
   },
 });
