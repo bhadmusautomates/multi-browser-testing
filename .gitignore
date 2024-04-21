@@ -5,3 +5,4 @@ node_modules/
 cypress.env.json
 npm_install_debug.log
 log/
+results/

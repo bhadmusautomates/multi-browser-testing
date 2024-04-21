@@ -1,8 +1,11 @@
 name: Run Cypress
 
 on: [push]
+# Setting up a system level env variable is necessary because GitHUb Actions
+# does not have access to the environment variables set in steps for Browserstack
 env:
   CYPRESS_MAILSLURP_API_KEY: ${{secrets.CYPRESS_MAILSLURP_API_KEY}}
+  CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
 
 jobs:
   cypress-run:
@@ -14,13 +17,18 @@ jobs:
 
     - name: Cypress Execution
       uses: cypress-io/github-action@v6
+      with:
+        # parallel: true
+        record: true
       env:
         CYPRESS_MAILSLURP_API_KEY: ${{env.CYPRESS_MAILSLURP_API_KEY}}
+        CYPRESS_RECORD_KEY: ${{ env.CYPRESS_RECORD_KEY }}
+
     # - name: 'BrowserStack Env Setup'
     #   uses: 'browserstack/github-actions/setup-env@master'
     #   with:
     #     username:  ${{ secrets.BROWSERSTACK_USERNAME }}
     #     access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
 
-    - run: npm i    
-    - run: npx browserstack-cypress run    
+    # - run: npm i    
+    # - run: npx browserstack-cypress run    

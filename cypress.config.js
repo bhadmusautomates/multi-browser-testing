@@ -12,6 +12,7 @@ async function setupNodeEvents(on, config) {
 }
 
 module.exports = defineConfig({
+  projectId: "upa3gw",
   e2e: {
     baseUrl: 'https://staging.trymima.com/',
     viewportHeight: 960,
