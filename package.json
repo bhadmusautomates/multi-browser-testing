@@ -17,5 +17,11 @@
     "cypress": "^13.7.1",
     "cypress-fill-command": "^1.0.2",
     "cypress-mailslurp": "^1.9.0"
+  },
+  "cypress-cucumber-preprocessor":{
+    "html":{
+      "enabled": true,
+      "output": "results/html-reports/mima-report.html"
+    }
   }
 }

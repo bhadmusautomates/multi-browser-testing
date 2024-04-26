@@ -23,7 +23,13 @@ jobs:
       env:
         CYPRESS_MAILSLURP_API_KEY: ${{env.CYPRESS_MAILSLURP_API_KEY}}
         CYPRESS_RECORD_KEY: ${{ env.CYPRESS_RECORD_KEY }}
-
+    
+    - name: Archive files
+      uses: actions/upload-artifact@v2
+      with:
+        name: my-artifact
+        path: |
+          results/
     # - name: 'BrowserStack Env Setup'
     #   uses: 'browserstack/github-actions/setup-env@master'
     #   with:
